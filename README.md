@@ -5,7 +5,8 @@ Static website for Wocheneinkauf App Store metadata.
 ## Pages
 
 - `/` - marketing page
-- `/privacy/` - privacy policy
+- `/privacy/` - English privacy summary
+- `/datenschutz/` - German privacy notice
 - `/support/` - support page
 - `/impressum/` - legal notice
 
@@ -23,4 +24,5 @@ Suggested App Store Connect URLs:
 
 - Marketing URL: `https://<domain>/`
 - Privacy Policy URL: `https://<domain>/privacy/`
+- German Privacy Policy URL: `https://<domain>/datenschutz/`
 - Support URL: `https://<domain>/support/`
