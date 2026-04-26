@@ -283,6 +283,12 @@ h1 {
   font-size: 1.45rem;
 }
 
+.policy h3 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+  font-size: 1.12rem;
+}
+
 .policy ul {
   padding-left: 1.3rem;
 }
@@ -303,12 +309,28 @@ h1 {
 }
 
 .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
   padding: 38px 0 48px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-weight: 620;
+  text-decoration: none;
 }
 
 @media (max-width: 920px) {
@@ -334,6 +356,11 @@ h1 {
   .feature-list,
   .support-options {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 

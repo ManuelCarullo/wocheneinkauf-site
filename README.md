@@ -7,6 +7,7 @@ Static website for Wocheneinkauf App Store metadata.
 - `/` - marketing page
 - `/privacy/` - privacy policy
 - `/support/` - support page
+- `/impressum/` - legal notice
 
 ## GitHub Pages
 
@@ -23,4 +24,3 @@ Suggested App Store Connect URLs:
 - Marketing URL: `https://<domain>/`
 - Privacy Policy URL: `https://<domain>/privacy/`
 - Support URL: `https://<domain>/support/`
-
