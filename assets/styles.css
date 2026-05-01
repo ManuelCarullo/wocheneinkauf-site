@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   --background: #f2f2f7;
+  --background-soft: #e9f4f1;
   --background-raised: #ffffff;
   --surface: #ffffff;
   --surface-secondary: #f8f8fb;
@@ -21,6 +22,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #141417;
+    --background-soft: #132321;
     --background-raised: #1f1f24;
     --surface: #1f1f24;
     --surface-secondary: #18181d;
@@ -114,17 +116,14 @@ a:hover {
   isolation: isolate;
   min-height: calc(100svh - 86px);
   overflow: hidden;
-  background:
-    radial-gradient(circle at 75% 18%, rgba(23, 196, 186, 0.18), transparent 34%),
-    radial-gradient(circle at 20% 85%, rgba(26, 168, 148, 0.12), transparent 28%),
-    var(--background);
+  background: linear-gradient(135deg, var(--background), var(--background-soft));
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
   gap: 64px;
   align-items: center;
   width: min(1120px, calc(100% - 40px));
@@ -205,7 +204,7 @@ h1 {
   box-shadow: 0 18px 38px rgba(26, 168, 148, 0.26);
 }
 
-.app-image-wrap {
+.hero-media {
   display: grid;
   justify-items: center;
   align-items: center;
@@ -213,20 +212,46 @@ h1 {
   min-width: 0;
 }
 
-.app-image-shell {
+.phone-placeholder {
+  display: grid;
+  align-content: center;
+  justify-items: center;
   width: min(100%, 330px);
+  aspect-ratio: 689 / 1500;
   border-radius: 48px;
-  padding: 10px;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--line));
+  padding: 34px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), var(--surface)),
+    var(--surface);
   box-shadow: var(--shadow);
+  text-align: center;
 }
 
-.app-preview {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 38px;
-  background: var(--background);
+.phone-placeholder strong,
+.image-placeholder strong {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.phone-placeholder span,
+.image-placeholder span {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.placeholder-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border-radius: var(--radius-button);
+  padding: 0 12px;
+  background: var(--surface-selected);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 760;
+  text-transform: uppercase;
 }
 
 .section {
@@ -250,24 +275,102 @@ h1 {
   line-height: 1.65;
 }
 
-.feature-list {
+.problem {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.problem > p:not(.eyebrow) {
+  max-width: 760px;
+}
+
+.problem-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 36px;
+  gap: 28px;
+  margin-top: 44px;
 }
 
-.feature {
-  min-height: 184px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 26px;
-  background: var(--surface);
+.problem-list div {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
 }
 
-.feature h3 {
+.problem-list span {
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.problem-list h3,
+.workflow-step h3 {
   margin-bottom: 12px;
   font-size: 1.25rem;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+.workflow {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.workflow-step {
+  min-width: 0;
+}
+
+.image-placeholder {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 260px;
+  margin-bottom: 22px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 48%, var(--line));
+  border-radius: var(--radius-card);
+  padding: 28px;
+  background: color-mix(in srgb, var(--surface) 82%, var(--background));
+  text-align: center;
+}
+
+.image-placeholder.landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.image-placeholder.portrait {
+  width: min(100%, 360px);
+  aspect-ratio: 3 / 4;
+  justify-self: end;
+  margin-bottom: 0;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 72px;
+  align-items: center;
+  width: min(1120px, calc(100% - 40px));
+}
+
+.feature-points {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding-left: 1.15rem;
+}
+
+.closing-section {
+  padding-bottom: 96px;
+}
+
+.closing-section .actions {
+  margin-top: 30px;
 }
 
 .policy {
@@ -345,17 +448,23 @@ h1 {
     padding-top: 22px;
   }
 
-  .app-image-wrap {
+  .hero-media {
     min-height: 0;
   }
 
-  .app-image-shell {
+  .phone-placeholder {
     width: min(100%, 350px);
   }
 
-  .feature-list,
+  .problem-list,
+  .workflow-grid,
+  .split-section,
   .support-options {
     grid-template-columns: 1fr;
+  }
+
+  .image-placeholder.portrait {
+    justify-self: stretch;
   }
 
   .site-footer {
@@ -390,12 +499,8 @@ h1 {
     width: 100%;
   }
 
-  .app-image-shell {
+  .phone-placeholder {
     border-radius: 42px;
-    padding: 8px;
-  }
-
-  .app-preview {
-    border-radius: 34px;
+    padding: 28px;
   }
 }
