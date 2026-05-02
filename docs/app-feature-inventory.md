@@ -177,7 +177,9 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can clear the current draft.
 - Users can open shopping history from the plan screen.
 - Users can edit category order for the plan.
-- The Start Shopping action is disabled when nothing is selected or when another active run exists.
+- The Start Shopping action starts a new run when no active run exists.
+- When a run is already active, the Plan action changes to Add to Shopping and appends only selections not already represented by open Shop rows.
+- After starting or appending to a run, the current Plan selections are cleared.
 - Shared-change metadata can show who last changed a selection or amount.
 
 Sources: `Features/ShoppingList/Views/SQLiteShoppingListView.swift`, `Features/ShoppingList/Views/SQLiteShoppingListDraftStore.swift`, `Features/ShoppingList/Views/Sections/SQLiteShoppingListRecipesSection.swift`, `Features/ShoppingList/Views/Sections/SQLiteShoppingListBasicsSection.swift`.
@@ -201,6 +203,7 @@ Source: `Domain/Logic/ShoppingListBuilder.swift`.
 - Starting a run creates a dated Shopping Run.
 - Runs store recipe count, basic count, selected snapshot data, contributing recipe IDs, and contributing item IDs.
 - Run entries include category, title, optional amount description, and sort order.
+- Run entries store normalized item identity and amount base data so appended plan items can merge predictably with open rows.
 - Users can check off items.
 - Users can uncheck completed items.
 - Users can remove lines from the active run.
