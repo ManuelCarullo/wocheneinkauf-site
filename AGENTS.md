@@ -12,7 +12,7 @@ Keep this file specific to the static website. Follow the workspace `../AGENTS.m
 ## Site Scope
 
 - This repository is a static GitHub Pages site published from the repository root.
-- Main pages are `/`, `/privacy/`, `/datenschutz/`, `/support/`, and `/impressum/`.
+- Main pages are `/`, `/de/`, `/privacy/`, `/datenschutz/`, `/support/`, `/de/support/`, and `/impressum/`.
 - Keep `docs/app-feature-inventory.md` aligned with the current iOS app when app features, tabs, settings, data flows, privacy-relevant behavior, or user-facing workflows change.
 - Preserve German copy where present. Do not translate, soften, or rewrite legal and privacy text unless the task explicitly asks for that.
 - Do not add build tooling, package managers, or generated assets unless the task requires them.

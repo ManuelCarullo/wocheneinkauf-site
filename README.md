@@ -5,9 +5,11 @@ Static website for Wocheneinkauf App Store metadata.
 ## Pages
 
 - `/` - marketing page
+- `/de/` - German marketing page
 - `/privacy/` - English privacy summary
 - `/datenschutz/` - German privacy notice
 - `/support/` - support page
+- `/de/support/` - German support page
 - `/impressum/` - legal notice
 
 ## GitHub Pages
@@ -23,6 +25,8 @@ Publish from the repository root on the default branch:
 Suggested App Store Connect URLs:
 
 - Marketing URL: `https://<domain>/`
+- German Marketing URL: `https://<domain>/de/`
 - Privacy Policy URL: `https://<domain>/privacy/`
 - German Privacy Policy URL: `https://<domain>/datenschutz/`
 - Support URL: `https://<domain>/support/`
+- German Support URL: `https://<domain>/de/support/`
