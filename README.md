@@ -4,13 +4,35 @@ Static website for Wocheneinkauf App Store metadata.
 
 ## Pages
 
+The site is organized as mirrored English and German page trees where English is the default at
+the root. The app name in the header is the only link back to the current language's main page.
+
+### English
+
 - `/` - marketing page
-- `/de/` - German marketing page
 - `/privacy/` - English privacy summary
-- `/datenschutz/` - German privacy notice
 - `/support/` - support page
+
+### German
+
+- `/de/` - German marketing page
+- `/datenschutz/` - German privacy notice
 - `/de/support/` - German support page
-- `/impressum/` - legal notice
+
+### Legal
+
+- `/impressum/` - German legal notice
+
+## Navigation Rules
+
+- Header navigation links only to subpages in the current language.
+- Footer navigation mirrors the current language's subpages and also includes `/impressum/`.
+- The main page is not listed in header or footer navigation; use the app name link instead.
+- Language links are separate from normal navigation:
+  - `/` <-> `/de/`
+  - `/privacy/` <-> `/datenschutz/`
+  - `/support/` <-> `/de/support/`
+- `/impressum/` is German-only and has no language switch.
 
 ## GitHub Pages
 

@@ -111,6 +111,30 @@ a:hover {
   text-decoration: none;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.language-switch {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-button);
+  padding: 0 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.language-switch:hover {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+  color: var(--accent-strong);
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -465,6 +489,14 @@ h1 {
   gap: 14px;
 }
 
+.footer-nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
 .footer-links a {
   color: var(--muted);
   font-weight: 620;
@@ -475,6 +507,10 @@ h1 {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
   }
 
   .hero-inner {
@@ -506,6 +542,10 @@ h1 {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .footer-nav-group {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 520px) {
@@ -516,9 +556,13 @@ h1 {
     width: min(100% - 28px, 1120px);
   }
 
+  .header-actions,
   .nav {
     width: 100%;
-    justify-content: space-between;
+  }
+
+  .nav {
+    justify-content: flex-start;
     gap: 10px;
   }
 
