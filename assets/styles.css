@@ -238,6 +238,31 @@ h1 {
   text-align: center;
 }
 
+.screenshot-slot {
+  position: relative;
+  overflow: hidden;
+}
+
+.screenshot-slot picture,
+.screenshot-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.screenshot-slot img {
+  object-fit: cover;
+}
+
+.phone-placeholder img {
+  object-fit: contain;
+}
+
+.screenshot-slot picture {
+  position: absolute;
+  inset: 0;
+}
+
 .phone-placeholder strong,
 .image-placeholder strong {
   margin: 8px 0;
