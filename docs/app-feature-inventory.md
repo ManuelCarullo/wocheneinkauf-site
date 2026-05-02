@@ -85,7 +85,7 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/CloudKitSharingLifecycle.swift`
 - Users can open item details from the catalog.
 - Users can delete items from the catalog.
 - Item deletion is blocked when recipes still reference the item.
-- Item names are normalized for duplicate detection, including diacritic folding and lowercase keys.
+- Item names are normalized for duplicate detection, including diacritic folding and lowercase keys; new items and renamed items are rejected when that normalized name already exists in the library.
 
 Sources: `Features/Items/Views/SQLiteItemsView.swift`, `Features/Items/Views/SQLiteItemDetailView.swift`, `Domain/DataAccess/ItemCatalog.swift`, `Domain/SQLite/SQLiteFeatureRepositories.swift`.
 
