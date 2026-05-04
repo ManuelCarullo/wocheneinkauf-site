@@ -244,9 +244,10 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Users can delete owned libraries when deletion is allowed.
 - Users can edit their profile display name.
 - Users can choose appearance mode with a segmented picker.
+- Settings includes a top-right Help button with tab-by-tab guidance, a typical planning workflow, detailed plan adjustment instructions, iCloud sharing guidance, and support/privacy links.
 - Debug builds include a diagnostics entry.
 
-Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
+Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/SQLiteHelpView.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
 
 ### Appearance
 
