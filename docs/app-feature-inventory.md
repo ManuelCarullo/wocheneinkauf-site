@@ -2,7 +2,7 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-01.
+Last updated: 2026-05-03.
 
 ## Product Summary
 
@@ -80,6 +80,8 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/CloudKitSharingLifecycle.swift`
 
 - Catalog items are scoped to the active library.
 - Items are listed alphabetically inside localized categories.
+- Users can search catalog items.
+- Searching can offer to create a new catalog item from the typed name when no exact normalized match exists.
 - Categories show item counts and category icons.
 - Users can add new items.
 - Users can open item details from the catalog.
@@ -87,7 +89,7 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/CloudKitSharingLifecycle.swift`
 - Item deletion is blocked when recipes still reference the item.
 - Item names are normalized for duplicate detection, including diacritic folding and lowercase keys; new items and renamed items are rejected when that normalized name already exists in the library.
 
-Sources: `Features/Items/Views/SQLiteItemsView.swift`, `Features/Items/Views/SQLiteItemDetailView.swift`, `Domain/DataAccess/ItemCatalog.swift`, `Domain/SQLite/SQLiteFeatureRepositories.swift`.
+Sources: `Features/Items/Views/SQLiteItemsView.swift`, `Features/Items/Views/SQLiteItemDetailView.swift`, `Domain/DataAccess/NormalizedName.swift`, `Domain/SQLite/SQLiteFeatureRepositories.swift`.
 
 ### Item Details
 
@@ -135,6 +137,8 @@ Source: `Domain/ValueTypes/ItemCategory.swift`.
 
 - Recipes are scoped to the active library.
 - Recipes are listed alphabetically.
+- Users can search recipes.
+- Searching can offer to create a new recipe from the typed name when no exact normalized match exists.
 - Users can create, edit, and delete recipes.
 - Recipe rows show ingredient count.
 - Recipe rows show shopping run metrics, including number of shopping runs and last run date.
