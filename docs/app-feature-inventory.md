@@ -173,10 +173,12 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can expand selected recipes to review ingredients.
 - Users can skip individual recipe ingredients.
 - Users can override recipe ingredient amounts and units for the current plan.
+- Users can long-press selected basics and included recipe ingredients to add per-plan notes.
 - Empty recipes are disabled for shopping selection.
 - Users can select basics from catalog items.
 - Basics are grouped by category.
 - Users can edit basic amounts and units for the current plan.
+- Plan notes are carried into the active shopping run and restored through shopping history.
 - Basics contributed by selected recipes are labeled so users know they are already included.
 - Users can collapse all expanded plan recipes, basic categories, and amount editors from the Plan menu.
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
@@ -209,6 +211,7 @@ Source: `Domain/Logic/ShoppingListBuilder.swift`.
 - Starting a run creates a dated Shopping Run.
 - Runs store recipe count, basic count, selected snapshot data, contributing recipe IDs, and contributing item IDs.
 - Run entries include category, title, optional amount description, and sort order.
+- Run entries can show notes carried over from plan basics or recipe ingredients.
 - Run entries store normalized item identity and amount base data so appended plan items can merge predictably with open rows.
 - Users can check off items.
 - Users can uncheck completed items.
