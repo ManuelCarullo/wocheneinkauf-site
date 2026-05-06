@@ -11,12 +11,14 @@ the root. The app name in the header is the only link back to the current langua
 
 - `/` - marketing page
 - `/privacy/` - English privacy summary
+- `/guide/` - English user guide
 - `/support/` - support page
 
 ### German
 
 - `/de/` - German marketing page
 - `/datenschutz/` - German privacy notice
+- `/de/guide/` - German user guide
 - `/de/support/` - German support page
 
 ### Legal
@@ -31,6 +33,7 @@ the root. The app name in the header is the only link back to the current langua
 - Language links are separate from normal navigation:
   - `/` <-> `/de/`
   - `/privacy/` <-> `/datenschutz/`
+  - `/guide/` <-> `/de/guide/`
   - `/support/` <-> `/de/support/`
 - `/impressum/` is German-only and has no language switch.
 
@@ -50,5 +53,7 @@ Suggested App Store Connect URLs:
 - German Marketing URL: `https://<domain>/de/`
 - Privacy Policy URL: `https://<domain>/privacy/`
 - German Privacy Policy URL: `https://<domain>/datenschutz/`
+- User Guide URL: `https://<domain>/guide/`
+- German User Guide URL: `https://<domain>/de/guide/`
 - Support URL: `https://<domain>/support/`
 - German Support URL: `https://<domain>/de/support/`

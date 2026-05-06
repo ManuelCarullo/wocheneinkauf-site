@@ -245,6 +245,7 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Users can edit their profile display name.
 - Users can choose appearance mode with a segmented picker.
 - Settings includes a top-right Help button with tab-by-tab guidance, a typical planning workflow, detailed plan adjustment instructions, iCloud sharing guidance, and support/privacy links.
+- Help links to the website user guide for full workflow instructions.
 - Debug builds include a diagnostics entry.
 
 Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/SQLiteHelpView.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
@@ -329,6 +330,7 @@ grocery list, shopping list, meal planning, recipes, household, shared list, iCl
 
 ## User Documentation Topics To Write Later
 
+- The website includes mirrored English and German user guide pages at `/guide/` and `/de/guide/`.
 - Getting started: choose a display name, create the first library.
 - Creating and switching libraries.
 - Sharing a library with another iCloud user.

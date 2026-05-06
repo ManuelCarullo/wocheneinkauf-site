@@ -470,6 +470,121 @@ h1 {
   background: var(--surface);
 }
 
+.guide {
+  max-width: 880px;
+}
+
+.guide .lead {
+  max-width: 760px;
+}
+
+.guide-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 34px 0 58px;
+}
+
+.guide-toc a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-button);
+  padding: 0 14px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.guide-toc a:hover {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+  color: var(--accent-strong);
+}
+
+.guide-section {
+  border-top: 1px solid var(--line);
+  padding: 46px 0;
+}
+
+.guide-section:first-of-type {
+  border-top: 0;
+}
+
+.guide-section h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.85rem, 4.4vw, 3.2rem);
+}
+
+.guide-section h3 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.guide-steps {
+  display: grid;
+  gap: 12px;
+  margin: 26px 0 0;
+  padding-left: 1.35rem;
+}
+
+.guide-steps li::marker {
+  color: var(--accent-strong);
+  font-weight: 780;
+}
+
+.guide-note,
+.guide-shot {
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 22px;
+  background: var(--surface);
+}
+
+.guide-note {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.guide-note strong {
+  color: var(--text);
+}
+
+.guide-shot {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-selected) 62%, transparent), transparent),
+    var(--surface-secondary);
+}
+
+.guide-shot span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  margin-bottom: 12px;
+  border-radius: var(--radius-button);
+  padding: 0 10px;
+  background: var(--surface-selected);
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 780;
+  text-transform: uppercase;
+}
+
+.guide-shot strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.12rem;
+}
+
+.guide-shot p {
+  margin-bottom: 0;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
