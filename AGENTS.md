@@ -21,7 +21,7 @@ Keep this file specific to the static website. Follow the workspace `../AGENTS.m
 - Footer navigation should mirror the current language's subpages and include `Impressum`: English pages use `Privacy`, `Support`, `Impressum`; German pages use `Datenschutz`, `Support`, `Impressum`.
 - Keep language switches visually and structurally separate from normal navigation using the shared language switch pattern. Pair pages as `/` <-> `/de/`, `/privacy/` <-> `/datenschutz/`, `/guide/` <-> `/de/guide/`, and `/support/` <-> `/de/support/`.
 - `/impressum/` is German-only legal content and should not include a language switch.
-- Keep `docs/app-feature-inventory.md` aligned with the current iOS app when app features, tabs, settings, data flows, privacy-relevant behavior, or user-facing workflows change.
+- For app feature documentation, follow the workspace documentation sync checklist in `../AGENTS.md`.
 - Preserve German copy where present. Do not translate, soften, or rewrite legal and privacy text unless the task explicitly asks for that.
 - Do not add build tooling, package managers, or generated assets unless the task requires them.
 
