@@ -2,7 +2,7 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-06.
+Last updated: 2026-05-11.
 
 ## Product Summary
 
@@ -73,8 +73,10 @@ Sources: `App/ContentView.swift`, `Features/Settings/Views/SQLiteSettingsView.sw
 - The app checks iCloud libraries during startup before continuing.
 - Sync and sharing errors are surfaced as user-facing alerts.
 - Runtime maintenance runs at launch and foreground activation to repair sync-induced duplicate or orphaned data.
+- Creating or managing shared libraries is gated by the one-time Premium purchase.
+- Invited users can accept and use shared libraries without buying Premium.
 
-Sources: `App/GroceryListBuilderApp.swift`, `App/CloudKitSharingLifecycle.swift`, `Features/Settings/Views/SQLiteSettingsView.swift`, `Domain/SQLite/SQLitePersistence.swift`, `docs/SQLiteData-Dedupe-and-Maintenance.md`.
+Sources: `App/GroceryListBuilderApp.swift`, `App/PremiumEntitlements.swift`, `App/CloudKitSharingLifecycle.swift`, `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/PremiumLibrarySharingPaywallView.swift`, `Domain/SQLite/SQLitePersistence.swift`, `docs/SQLiteData-Dedupe-and-Maintenance.md`.
 
 ### Catalog
 
@@ -247,6 +249,8 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Users can rename owned libraries.
 - Users can manage sharing for owned libraries.
 - Shared-with-me libraries show an informational sharing row instead of owner sharing controls.
+- Non-premium owners see a Premium paywall before they can create or manage shared libraries.
+- Premium can be restored from the paywall.
 - Users can delete owned libraries when deletion is allowed.
 - Users can edit their profile display name.
 - Users can choose appearance mode with a segmented picker.
@@ -254,7 +258,7 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Help links to the website user guide for full workflow instructions.
 - Debug builds include a diagnostics entry.
 
-Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/SQLiteHelpView.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
+Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/PremiumLibrarySharingPaywallView.swift`, `Features/Settings/Views/SQLiteHelpView.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
 
 ### Appearance
 
