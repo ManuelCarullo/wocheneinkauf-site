@@ -83,7 +83,7 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/CloudKitSharingLifecycle.swift`
 - Users can search catalog items.
 - Searching can offer to create a new catalog item from the typed name when no exact normalized match exists.
 - Categories show item counts and category icons.
-- Users can add new items.
+- Users create new catalog items from the catalog search field.
 - Users can open item details from the catalog.
 - Users can delete items from the catalog.
 - Item deletion is blocked when recipes still reference the item.
@@ -139,7 +139,8 @@ Source: `Domain/ValueTypes/ItemCategory.swift`.
 - Recipes are listed alphabetically.
 - Users can search recipes.
 - Searching can offer to create a new recipe from the typed name when no exact normalized match exists.
-- Users can create, edit, and delete recipes.
+- Users create new recipes from the recipes search field.
+- Users can edit and delete recipes.
 - Recipe rows show ingredient count.
 - Recipe rows show shopping run metrics, including number of shopping runs and last run date.
 - Recipe detail shows the recipe name, ingredient count, shopping run metrics, and a read-only ingredient list.
