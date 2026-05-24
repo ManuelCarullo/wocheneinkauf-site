@@ -2,17 +2,17 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-11.
+Last updated: 2026-05-24.
 
 ## Product Summary
 
-Wocheneinkauf is an iOS grocery planning app for households. It keeps grocery libraries, catalog items, recipes, shopping plans, active shopping runs, and shopping history together in one app. A household can plan from saved recipes and recurring basics, customize the resulting list, share the library through iCloud, and check items off while shopping.
+Wocheneinkauf is an iOS grocery planning app for households. It keeps grocery libraries, catalog items, recipes, shopping plans, active shopping runs, and shopping history together in one app. A household can plan from saved recipes, recurring basics, and quick ad hoc items, customize the resulting list, share the library through iCloud, and check items off while shopping.
 
 The app is built around user-managed libraries. Each library contains its own catalog, recipes, selections, category order, active run, and history. Libraries can be private, shared with other iCloud users, or accepted from someone else.
 
 ## Core User Promise
 
-- Turn recipes and household basics into a practical grocery plan.
+- Turn recipes, household basics, and quick ad hoc items into a practical grocery plan.
 - Keep reusable grocery catalog items organized by category.
 - Reuse recipes, amounts, and default item quantities instead of rebuilding the same list every week.
 - Share a grocery library with household members through iCloud.
@@ -27,12 +27,11 @@ The app is built around user-managed libraries. Each library contains its own ca
 
 ## App Structure
 
-The current app has five main tabs:
+The current app has four main tabs:
 
-- `Recipes`: manage reusable recipes and ingredients.
-- `Catalog`: manage reusable grocery items.
-- `Plan`: build the next shopping plan from recipes and basics.
+- `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items.
 - `Shop`: work through the active in-app shopping run.
+- `Recipes`: manage reusable recipes and ingredients.
 - `Settings`: manage libraries, sharing, profile name, and appearance.
 
 Sources: `GroceryListBuilder/GroceryListBuilder/App/ContentView.swift`, `GroceryListBuilder/README.md`.
@@ -82,6 +81,7 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/PremiumEntitlements.swift`, `Ap
 ### Catalog
 
 - Catalog items are scoped to the active library.
+- Full catalog management is opened from the Plan menu through `Manage Catalog`.
 - Items are listed alphabetically inside localized categories.
 - Users can search catalog items.
 - Searching can offer to create a new catalog item from the typed name when no exact normalized match exists.
@@ -112,6 +112,7 @@ Sources: `Features/Items/Views/SQLiteItemDetailView.swift`, `Features/Items/View
 
 Current item categories:
 
+- Uncategorized
 - Produce
 - Fruit
 - Baked Goods
@@ -132,7 +133,8 @@ Current item categories:
 - Toiletries
 - Other
 
-Categories have localized titles and system symbols for UI grouping.
+Categories have localized titles and system symbols for UI grouping. Uncategorized is the first
+default category, but users can move it through manual category ordering.
 
 Source: `Domain/ValueTypes/ItemCategory.swift`.
 
@@ -172,6 +174,7 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 ### Shopping Plan
 
 - The Plan tab builds the next shopping plan.
+- Plan is the default main tab for new sessions.
 - The plan screen shows a draft summary.
 - Users can select recipes.
 - Users can expand selected recipes to review ingredients.
@@ -180,12 +183,16 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can long-press selected basics and included recipe ingredients to add per-plan notes.
 - Empty recipes are disabled for shopping selection.
 - Users can select basics from catalog items.
+- Users can search Basics directly in Plan.
+- Plan Basics search finds existing catalog items even when unselected items are hidden.
+- Users can create a missing basic from Plan search; the new reusable catalog item is saved under `Uncategorized` and selected in the current plan immediately.
 - Basics are grouped by category.
 - Users can edit basic amounts and units for the current plan.
 - Plan notes are carried into the active shopping run and restored through shopping history.
 - Basics contributed by selected recipes are labeled so users know they are already included.
 - Users can collapse all expanded plan recipes, basic categories, and amount editors from the Plan menu.
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
+- Users can open catalog management from the Plan menu.
 - Users can clear the current draft.
 - Users can open shopping history from the plan screen.
 - Users can edit category order for the plan.
@@ -346,7 +353,8 @@ grocery list, shopping list, meal planning, recipes, household, shared list, iCl
 - Creating and switching libraries.
 - Sharing a library with another iCloud user.
 - Accepting a shared library.
-- Adding catalog items and default amounts.
+- Adding quick items directly in Plan Basics.
+- Managing catalog items and default amounts from the Plan menu.
 - Creating a recipe.
 - Adding ingredients from the catalog.
 - Creating a new ingredient while editing a recipe.
@@ -361,7 +369,7 @@ grocery list, shopping list, meal planning, recipes, household, shared list, iCl
 
 ## Documentation Notes
 
-- `GroceryListBuilder/README.md` has been updated to describe the current five-tab app structure: Recipes, Catalog, Plan, Shop, Settings.
+- `GroceryListBuilder/README.md` describes the current four-tab app structure: Plan, Shop, Recipes, Settings.
 - `GroceryListBuilder/README.md` no longer references the removed history-retention setting or missing CloudKit rollout document.
 - Reminders/export wording remains in some localization and table fields, but no EventKit/Reminders integration code or `EventKit` imports were found in app source.
 - Website copy should avoid promising Reminders export unless the feature is reintroduced or confirmed elsewhere.
