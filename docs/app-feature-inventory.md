@@ -73,7 +73,8 @@ Sources: `App/ContentView.swift`, `Features/Settings/Views/SQLiteSettingsView.sw
 - The app checks iCloud libraries during startup before continuing.
 - Sync and sharing errors are surfaced as user-facing alerts.
 - Runtime maintenance runs at launch and foreground activation to repair sync-induced duplicate or orphaned data.
-- Creating or managing shared libraries as the owner is gated by the one-time Premium purchase.
+- Creating or managing shared libraries as the owner is gated by Premium.
+- Premium can be unlocked through App Store purchase, restore, or Apple offer code redemption.
 - Invited users can accept and use shared libraries without buying Premium.
 
 Sources: `App/GroceryListBuilderApp.swift`, `App/PremiumEntitlements.swift`, `App/CloudKitSharingLifecycle.swift`, `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/PremiumLibrarySharingPaywallView.swift`, `Domain/SQLite/SQLitePersistence.swift`, `docs/SQLiteData-Dedupe-and-Maintenance.md`.
@@ -250,7 +251,7 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Users can manage sharing for owned libraries.
 - Shared-with-me libraries show an informational sharing row instead of owner sharing controls.
 - Non-premium owners see a Premium paywall before they can create or manage shared libraries.
-- Premium can be restored from the paywall.
+- Premium can be purchased, restored, or unlocked by redeeming an Apple offer code from the paywall.
 - Users can delete owned libraries when deletion is allowed.
 - Users can edit their profile display name.
 - Users can choose appearance mode with a segmented picker.
