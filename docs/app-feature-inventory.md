@@ -2,7 +2,7 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-24.
+Last updated: 2026-05-25.
 
 ## Product Summary
 
@@ -194,12 +194,13 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
 - Users can open catalog management from the Plan menu.
 - Users can clear the current draft.
+- Users can open plan activity to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
 - Users can open shopping history from the plan screen.
 - Users can edit category order for the plan.
 - The Start Shopping action starts a new run when no active run exists.
 - When a run is already active, the Plan action changes to Add to Shopping and appends only selections not already represented by open Shop rows.
 - After starting or appending to a run, the current Plan selections are cleared.
-- Shared-change metadata can show who last changed a selection or amount.
+- Shared-change metadata can show who last changed a selection or amount, while the synced activity feed keeps field-level plan audit entries.
 
 Sources: `Features/ShoppingList/Views/SQLiteShoppingListView.swift`, `Features/ShoppingList/Views/SQLiteShoppingListDraftStore.swift`, `Features/ShoppingList/Views/Sections/SQLiteShoppingListRecipesSection.swift`, `Features/ShoppingList/Views/Sections/SQLiteShoppingListBasicsSection.swift`.
 
