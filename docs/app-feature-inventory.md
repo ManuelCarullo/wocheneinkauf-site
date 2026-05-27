@@ -185,7 +185,8 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can select basics from catalog items.
 - Users can search Basics directly in Plan.
 - Plan Basics search finds existing catalog items even when unselected items are hidden.
-- Users can create a missing basic from Plan search; the new reusable catalog item is saved under `Uncategorized` and selected in the current plan immediately.
+- Users can create a missing basic from Plan search, choose its category before creating it, and select it in the current plan immediately.
+- Users can move existing Plan basics to another catalog category from the Plan row; this updates the reusable catalog item everywhere.
 - Basics are grouped by category.
 - Users can edit basic amounts and units for the current plan.
 - Plan notes are carried into the active shopping run and restored through shopping history.

@@ -12,6 +12,7 @@ Keep this file specific to the static website. Follow the workspace `../AGENTS.m
 ## Site Scope
 
 - This repository is a static GitHub Pages site published from the repository root.
+- Site changes do not need feature branches; commit them directly on `main` unless the user explicitly requests a branch.
 - The page hierarchy is mirrored by language:
   - English: `/`, `/privacy/`, `/guide/`, `/support/`
   - German: `/de/`, `/datenschutz/`, `/de/guide/`, `/de/support/`
