@@ -243,7 +243,7 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingRunView.swift`, `Features/Sh
 - History is scoped to each library.
 - History stores snapshots of shopping plans/runs.
 - History entries track status: active, finished, or discarded.
-- History rows show date, title, status, recipe/basic summary counts, and contributor display name when available.
+- History rows show date, status, recipe/basic summary counts, and contributor display name when available.
 - Users can open a history entry to review its recipes, ingredients, skipped ingredients, basics, amounts, units, notes, and missing references before restoring.
 - Users can restore a history entry back into the current shopping draft from the detail view.
 - Restoring a history entry asks before replacing an existing draft selection.
