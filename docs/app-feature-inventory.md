@@ -180,7 +180,8 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can expand selected recipes to review ingredients.
 - Users can skip individual recipe ingredients.
 - Users can override recipe ingredient amounts and units for the current plan.
-- Users can long-press selected basics and included recipe ingredients to add per-plan notes.
+- Users can long-press selected basics to open note and category actions.
+- Users can long-press included recipe ingredients to add per-plan notes.
 - Empty recipes are disabled for shopping selection.
 - Users can select basics from catalog items.
 - Users can search Basics directly in Plan.
@@ -197,7 +198,6 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can clear the current draft.
 - Users can open plan activity to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
 - Users can open shopping history from the plan screen.
-- Users can edit category order for the plan.
 - The Start Shopping action starts a new run when no active run exists.
 - When a run is already active, the Plan action changes to Add to Shopping and appends only selections not already represented by open Shop rows.
 - After starting or appending to a run, the current Plan selections are cleared.
@@ -332,7 +332,7 @@ Wocheneinkauf is a shared household grocery planner that turns recipes and every
 - Basics for recurring staples.
 - Smart merging of duplicate ingredients and compatible amounts.
 - Category-based shopping organization.
-- Editable category order for planning and shopping.
+- Editable category order for the active shopping run.
 - Shopping history with restore.
 - English and German localization.
 - No analytics or ads found in app code.
