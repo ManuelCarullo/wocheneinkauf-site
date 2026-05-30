@@ -2,7 +2,7 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-25.
+Last updated: 2026-05-30.
 
 ## Product Summary
 
@@ -194,6 +194,7 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Basics contributed by selected recipes are labeled so users know they are already included.
 - Users can collapse all expanded plan recipes, basic categories, and amount editors from the Plan menu.
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
+- Users can edit the Plan Basics category order from the Plan menu.
 - Users can open catalog management from the Plan menu.
 - Users can clear the current draft.
 - Users can open plan activity to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
