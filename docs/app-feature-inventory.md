@@ -2,7 +2,7 @@
 
 Source document for future website, App Store, support, and general user documentation copy.
 Collected from the iOS app codebase on 2026-05-01.
-Last updated: 2026-05-30.
+Last updated: 2026-05-31.
 
 ## Product Summary
 
@@ -31,7 +31,7 @@ The current app has three main tabs:
 
 - `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items; search/create recipes and basics from the plan screen.
 - `Shop`: work through the active in-app shopping run.
-- `Settings`: manage libraries, sharing, profile name, and appearance.
+- `Settings`: manage libraries, sharing, and profile name.
 
 Sources: `GroceryListBuilder/GroceryListBuilder/App/ContentView.swift`, `GroceryListBuilder/README.md`.
 
@@ -264,20 +264,11 @@ Sources: `Features/ShoppingList/Views/SQLiteShoppingListHistoryView.swift`, `Fea
 - Premium can be purchased, restored, or unlocked by redeeming an Apple offer code from the paywall.
 - Users can delete owned libraries when deletion is allowed.
 - Users can edit their profile display name.
-- Users can choose appearance mode with a segmented picker.
 - Settings includes a top-right Help button with tab-by-tab guidance, a typical planning workflow, detailed plan adjustment instructions, iCloud sharing guidance, and support/privacy links.
 - Help links to the website user guide for full workflow instructions.
 - Debug builds include a diagnostics entry.
 
 Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `Features/Settings/Views/SQLiteSettingsRows.swift`, `Features/Settings/Views/SQLiteSettingsLibraryPresentation.swift`, `Features/Settings/Views/PremiumLibrarySharingPaywallView.swift`, `Features/Settings/Views/SQLiteHelpView.swift`, `Features/Settings/Views/SQLiteDiagnosticsView.swift`.
-
-### Appearance
-
-- The app supports system, light, and dark appearance modes.
-- The selected appearance mode is stored in app storage.
-- The setting uses a segmented picker in Settings.
-
-Sources: `Features/Settings/Views/SQLiteSettingsView.swift`, `App/GroceryListBuilderApp.swift`.
 
 ### Localization
 
