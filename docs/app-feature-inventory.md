@@ -81,14 +81,9 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/PremiumEntitlements.swift`, `Ap
 ### Catalog
 
 - Catalog items are scoped to the active library.
-- Full catalog management is opened from the Plan menu through `Manage Catalog`.
-- Items are listed alphabetically inside localized categories.
-- Users can search catalog items.
-- Searching can offer to create a new catalog item from the typed name when no exact normalized match exists.
-- Categories show item counts and category icons.
-- Users create new catalog items from the catalog search field.
-- Users can open item details from the catalog.
-- Users can delete items from the catalog.
+- Recipes and Plan basics draw from the reusable catalog.
+- Users create catalog items from Plan Basics search and the recipe ingredient picker.
+- Users can open item details from Plan basic rows, Plan recipe ingredient rows, and Recipe Detail ingredient rows.
 - Item deletion is blocked when recipes still reference the item.
 - Item names are normalized for duplicate detection, including diacritic folding and lowercase keys; new items and renamed items are rejected when that normalized name already exists in the library.
 
@@ -181,6 +176,7 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can skip individual recipe ingredients.
 - Users can override recipe ingredient amounts and units for the current plan.
 - Users can long-press selected basics to open note and category actions.
+- Users can long-press basics and recipe ingredients to open item details.
 - Users can long-press included recipe ingredients to add per-plan notes.
 - Empty recipes are disabled for shopping selection.
 - Users can select basics from catalog items.
@@ -195,7 +191,6 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can collapse all expanded plan recipes, basic categories, and amount editors from the Plan menu.
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
 - Users can edit the Plan Basics category order from the Plan menu.
-- Users can open catalog management from the Plan menu.
 - Users can clear the current draft.
 - Users can open plan activity to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
 - Users can open shopping history from the plan screen.
@@ -358,7 +353,7 @@ grocery list, shopping list, meal planning, recipes, household, shared list, iCl
 - Sharing a library with another iCloud user.
 - Accepting a shared library.
 - Adding quick items directly in Plan Basics.
-- Managing catalog items and default amounts from the Plan menu.
+- Opening item details from Plan and Recipe Detail long-press menus.
 - Creating a recipe.
 - Adding ingredients from the catalog.
 - Creating a new ingredient while editing a recipe.
