@@ -27,11 +27,10 @@ The app is built around user-managed libraries. Each library contains its own ca
 
 ## App Structure
 
-The current app has four main tabs:
+The current app has three main tabs:
 
-- `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items.
+- `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items; search/create recipes and basics from the plan screen.
 - `Shop`: work through the active in-app shopping run.
-- `Recipes`: manage reusable recipes and ingredients.
 - `Settings`: manage libraries, sharing, profile name, and appearance.
 
 Sources: `GroceryListBuilder/GroceryListBuilder/App/ContentView.swift`, `GroceryListBuilder/README.md`.
@@ -137,17 +136,18 @@ Source: `Domain/ValueTypes/ItemCategory.swift`.
 
 - Recipes are scoped to the active library.
 - Recipes are listed alphabetically.
-- Users can search recipes.
+- Users can search recipes from Plan.
 - Searching can offer to create a new recipe from the typed name when no exact normalized match exists.
-- Users create new recipes from the recipes search field.
-- Users can edit and delete recipes.
+- Users create new recipes from the Plan recipes search field.
+- Users can open recipe details from a Plan recipe long-press menu.
+- Users can edit and delete recipes from recipe detail.
 - Recipe rows show ingredient count.
 - Recipe rows show shopping run metrics, including number of shopping runs and last run date.
 - Recipe detail shows the recipe name, ingredient count, shopping run metrics, and a read-only ingredient list.
 - Recipe detail supports edit and delete actions.
 - Deleting a recipe asks for confirmation.
 
-Sources: `Features/Recipes/Views/SQLiteRecipesView.swift`, `Features/Recipes/Views/SQLiteRecipeDetailView.swift`, `Domain/ValueTypes/ExportMetricsSummary.swift`, `Domain/ValueTypes/ExportMetricsFormatting.swift`.
+Sources: `Features/ShoppingList/Views/Sections/SQLiteShoppingListRecipesSection.swift`, `Features/Recipes/Views/SQLiteRecipeDetailView.swift`, `Domain/ValueTypes/ExportMetricsSummary.swift`, `Domain/ValueTypes/ExportMetricsFormatting.swift`.
 
 ### Recipe Editor And Ingredient Picker
 
@@ -172,6 +172,10 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Plan is the default main tab for new sessions.
 - The plan screen shows a draft summary.
 - Users can select recipes.
+- Users can search recipes directly in Plan.
+- Plan recipe search finds existing recipes even when unselected recipes are hidden.
+- Users can create a missing recipe from Plan search; the recipe editor opens with the typed name.
+- Users can long-press recipes to open recipe details.
 - Users can expand selected recipes to review ingredients.
 - Users can skip individual recipe ingredients.
 - Users can override recipe ingredient amounts and units for the current plan.
@@ -368,7 +372,7 @@ grocery list, shopping list, meal planning, recipes, household, shared list, iCl
 
 ## Documentation Notes
 
-- `GroceryListBuilder/README.md` describes the current four-tab app structure: Plan, Shop, Recipes, Settings.
+- `GroceryListBuilder/README.md` describes the current three-tab app structure: Plan, Shop, Settings.
 - `GroceryListBuilder/README.md` no longer references the removed history-retention setting or missing CloudKit rollout document.
 - Reminders/export wording remains in some localization and table fields, but no EventKit/Reminders integration code or `EventKit` imports were found in app source.
 - Website copy should avoid promising Reminders export unless the feature is reintroduced or confirmed elsewhere.
