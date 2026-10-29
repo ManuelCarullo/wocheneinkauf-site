@@ -230,6 +230,7 @@ Source: `Domain/Logic/ShoppingListBuilder.swift`.
 - Users can check off items.
 - Users can uncheck completed items.
 - Users can remove lines from the active run.
+- Users can swipe an open line to Next Store, which moves it into a synced section below the category groups, grouped by category; swiping it back returns it to its category, and Move All Back (section header or the … menu) returns every deferred line at once. Checking off a deferred line clears the deferral, and starting a new run from a stale run returns carried-over deferred lines to their categories.
 - Completed items are grouped in a disclosure section.
 - Remaining items are grouped by category.
 - Users can edit category order for the active run.
@@ -334,7 +335,7 @@ Wocheneinkauf is a shared household grocery planner that turns recipes and every
 - "From recipes to a real shopping run": recipe selection, skipped ingredients, amount overrides, start shopping.
 - "One library for the household": iCloud sharing, owned/shared libraries, display names for changes.
 - "Catalog once, reuse every week": item defaults, categories, recipe usage, frequent ingredient suggestions.
-- "Shop without rebuilding the list": checkoff, completed section, remove items, finish/discard.
+- "Shop without rebuilding the list": checkoff, completed section, Next Store section, remove items, finish/discard.
 - "Repeat what worked": history restore and recipe/item usage metrics.
 
 ### Possible App Store Keywords
