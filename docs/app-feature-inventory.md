@@ -200,6 +200,7 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can open shopping history from the plan screen.
 - The Start Shopping action starts a new run when no active run exists.
 - When a run is already active, the Plan action changes to Add to Shopping and appends only selections not already represented by open Shop rows.
+- If the active run started more than a week ago, Add to Shopping first asks whether to add to the current run or start a new one. Starting a new run finishes the old run into history, carries its unchecked rows into the new run, and merges the Plan selections into them.
 - After starting or appending to a run, the current Plan selections are cleared.
 - Shared-change metadata can show who last changed a selection or amount, while the synced activity feed keeps field-level plan audit entries.
 
