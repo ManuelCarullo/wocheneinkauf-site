@@ -29,7 +29,7 @@ The app is built around user-managed libraries. Each library contains its own ca
 
 The current app has three main tabs:
 
-- `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items; search/create recipes and basics from the plan screen.
+- `Plan`: build the next shopping plan from recipes, recurring basics, and quick ad hoc items; search recipes and basics from one field at the top of the plan screen, and create new ones with the + button.
 - `Shop`: work through the active in-app shopping run.
 - `Settings`: manage libraries, sharing, and profile name.
 
@@ -81,7 +81,7 @@ Sources: `App/GroceryListBuilderApp.swift`, `App/PremiumEntitlements.swift`, `Ap
 
 - Catalog items are scoped to the active library.
 - Recipes and Plan basics draw from the reusable catalog.
-- Users create catalog items from Plan Basics search and the recipe ingredient picker.
+- Users create catalog items from the Plan + menu, the Plan empty search results, and the recipe ingredient picker.
 - Users can open item details from Plan basic rows, Plan recipe ingredient rows, and Recipe Detail ingredient rows.
 - Item deletion is blocked when recipes still reference the item.
 - Item names are normalized for duplicate detection, including diacritic folding and lowercase keys; new items and renamed items are rejected when that normalized name already exists in the library.
@@ -137,8 +137,7 @@ Source: `Domain/ValueTypes/ItemCategory.swift`.
 - Recipes are scoped to the active library.
 - Recipes are listed alphabetically.
 - Users can search recipes from Plan.
-- Searching can offer to create a new recipe from the typed name when no exact normalized match exists.
-- Users create new recipes from the Plan recipes search field.
+- Users create new recipes from the Plan + menu or the Plan empty search results; the editor opens with any typed search text as the name.
 - Users can open recipe details from a Plan recipe long-press menu.
 - Users can edit and delete recipes from recipe detail.
 - Recipe rows show ingredient count.
@@ -172,10 +171,11 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Plan is the default main tab for new sessions.
 - The plan screen shows a draft summary.
 - Users can select recipes.
-- Users can search recipes directly in Plan.
-- Plan recipe search finds existing recipes even when unselected recipes are hidden.
-- Users can create a missing recipe from Plan search; the recipe editor opens with the typed name.
-- A + button next to Start Shopping opens a menu to create a New Recipe or New Item at any time.
+- One search field pinned at the top of Plan searches recipes and basics together. While searching, the draft summary is hidden and matches are listed under Recipes and Basics.
+- Plan search finds existing recipes and basics even when unselected entries are hidden.
+- A + button next to Start Shopping opens a menu to create a New Recipe or New Item at any time. It stays reachable above the keyboard while search has focus.
+- When a search has no matches, the empty state offers New Recipe and New Item.
+- Both create sheets open with any typed search text as the name. After saving, the search field is set to the created name with the keyboard down, so the new entry is visible and can be toggled. New entries are not selected automatically.
 - Recipe and item create sheets check the name while typing and show the result directly under the name field: an exact name match (ignoring case and accents) disables Save and offers Open Existing; similar names (plurals, word order, typos, contained names, shared German compound heads like -tomaten or -zwiebeln) show a warning with open rows but still allow saving.
 - When spelling finds nothing and Apple Intelligence is available, the sheet asks the on-device Foundation Models language model, after a short typing pause, for existing names with the same meaning (synonyms, translations, close substitutes) and shows them as "Possibly the same". The lookup starts 0.3 seconds after typing stops; while the model runs, a small "Checking for similar entries…" indicator appears under the name field, and each confirmed match appears as soon as it is found. Long lists are sent in batches of 150 names. Names are processed on device only; without Apple Intelligence this step is skipped.
 - Users can long-press recipes to open recipe details.
@@ -187,9 +187,6 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can long-press included recipe ingredients to add per-plan notes.
 - Empty recipes are disabled for shopping selection.
 - Users can select basics from catalog items.
-- Users can search Basics directly in Plan.
-- Plan Basics search finds existing catalog items even when unselected items are hidden.
-- Users can create a missing basic from Plan search, choose its category before creating it, and select it in the current plan immediately.
 - Users can move existing Plan basics to another catalog category from the Plan row; this updates the reusable catalog item everywhere.
 - Basics are grouped by category.
 - Users can edit basic amounts and units for the current plan.
