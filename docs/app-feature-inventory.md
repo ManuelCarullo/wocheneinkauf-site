@@ -175,7 +175,7 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can search recipes directly in Plan.
 - Plan recipe search finds existing recipes even when unselected recipes are hidden.
 - Users can create a missing recipe from Plan search; the recipe editor opens with the typed name.
-- A + button next to the Plan dock opens a menu to create a New Recipe or New Item at any time.
+- A + button next to Start Shopping opens a menu to create a New Recipe or New Item at any time.
 - Recipe and item create sheets check the name while typing and show the result directly under the name field: an exact name match (ignoring case and accents) disables Save and offers Open Existing; similar names (plurals, word order, typos, contained names, shared German compound heads like -tomaten or -zwiebeln) show a warning with open rows but still allow saving.
 - When spelling finds nothing and Apple Intelligence is available, the sheet asks the on-device Foundation Models language model, after a short typing pause, for existing names with the same meaning (synonyms, translations, close substitutes) and shows them as "Possibly the same". The lookup starts 0.3 seconds after typing stops; while the model runs, a small "Checking for similar entries…" indicator appears under the name field, and each confirmed match appears as soon as it is found. Long lists are sent in batches of 150 names. Names are processed on device only; without Apple Intelligence this step is skipped.
 - Users can long-press recipes to open recipe details.
@@ -199,8 +199,8 @@ Sources: `Features/Recipes/Views/SQLiteRecipeEditorView.swift`, `Features/Recipe
 - Users can hide unselected recipes and basics from the Plan menu while reviewing or editing selected items.
 - Users can edit the Plan Basics category order from the Plan menu.
 - Users can clear the current draft.
-- Users can open plan activity to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
-- Users can open shopping history from the plan screen.
+- Users can open plan activity from the Plan menu to review who changed recipes, ingredients, basics, amounts, units, notes, clear actions, and history restores.
+- Users can open shopping history from the Plan menu.
 - The Start Shopping action starts a new run when no active run exists.
 - When a run is already active, the Plan action changes to Add to Shopping and appends only selections not already represented by open Shop rows.
 - If the active run started more than a week ago, Add to Shopping first asks whether to add to the current run or start a new one. Starting a new run finishes the old run into history, carries its unchecked rows into the new run, and merges the Plan selections into them.
