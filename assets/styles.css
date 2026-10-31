@@ -5,14 +5,15 @@
   --background-raised: #ffffff;
   --surface: #ffffff;
   --surface-secondary: #f8f8fb;
-  --surface-selected: rgba(26, 168, 148, 0.14);
+  --surface-selected: rgba(14, 117, 104, 0.14);
   --text: #1c1c1e;
   --muted: #4a4c52;
-  --tertiary: #8a8d94;
+  --tertiary: #65696e;
   --line: rgba(60, 60, 67, 0.14);
-  --accent: #1aa894;
-  --accent-strong: #168b7b;
-  --accent-bright: #17c4ba;
+  --accent: #0e7568;
+  --accent-strong: #084f46;
+  --accent-bright: #0e7a70;
+  --on-accent: #ffffff;
   --shadow: 0 28px 80px rgba(28, 28, 30, 0.16);
   --radius-card: 30px;
   --radius-row: 18px;
@@ -29,11 +30,12 @@
     --surface-selected: rgba(33, 204, 184, 0.16);
     --text: #f7f7fa;
     --muted: #c9c9d0;
-    --tertiary: #92929c;
+    --tertiary: #a3a8ad;
     --line: rgba(255, 255, 255, 0.13);
     --accent: #21ccb8;
     --accent-strong: #6ce4d7;
-    --accent-bright: #16d3c5;
+    --accent-bright: #17c4ba;
+    --on-accent: #06201c;
     --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
   }
 }
@@ -93,9 +95,9 @@ a:hover {
   place-items: center;
   border-radius: 14px;
   background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-  color: #fff;
+  color: var(--on-accent);
   font-size: 20px;
-  box-shadow: 0 12px 28px rgba(26, 168, 148, 0.22);
+  box-shadow: 0 12px 28px rgba(14, 117, 104, 0.22);
 }
 
 .nav {
@@ -234,8 +236,8 @@ h1 {
 .button.primary {
   border-color: transparent;
   background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-  color: #fff;
-  box-shadow: 0 18px 38px rgba(26, 168, 148, 0.26);
+  color: var(--on-accent);
+  box-shadow: 0 18px 38px rgba(14, 117, 104, 0.26);
 }
 
 .hero-media {
